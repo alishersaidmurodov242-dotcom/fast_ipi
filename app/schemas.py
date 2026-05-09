@@ -6,8 +6,9 @@ from datetime import datetime
 
 class PostBase(BaseModel):
     title: str              # post title
-    content: str            # post content
+    body: str               # post content
     published: bool = True  # default = True
+    rating: Optional[int] = None      # post rating
 
 class PostCreate(PostBase):
     pass  # used when creating a post (same fields as base)
@@ -21,6 +22,7 @@ class UserCreate(BaseModel):
     username: str
     email: EmailStr   # automatically checks valid email
     password: str
+    phone: Optional[str] = None
 
 class UserLogin(BaseModel):
     email: EmailStr
@@ -30,6 +32,7 @@ class UserResponse(BaseModel):
     id: int
     username: str
     email: EmailStr
+    phone: Optional[str] = None
     created_at: datetime
 
     class Config:
