@@ -6,7 +6,7 @@ from datetime import datetime
 
 class PostBase(BaseModel):
     title: str              # post title
-    body: str               # post content
+    content: str            # post content
     published: bool = True  # default = True
     rating: Optional[int] = None      # post rating
 
